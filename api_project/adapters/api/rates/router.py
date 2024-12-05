@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Body
 
 from api_project.adapters.api.rates.schemes import InsuranceCostsRequest, InsuranceCostsResponse
 from api_project.aplication.app import get_rate_service
@@ -12,7 +12,7 @@ rates_router = APIRouter(
 
 @rates_router.post("/insurance_costs")
 async def insurance_costs(
-    request: InsuranceCostsRequest = Depends(),
+    request: InsuranceCostsRequest = Body(),
     rate_service: RateService = Depends(get_rate_service)
 ) -> InsuranceCostsResponse:
     prise = await rate_service.get_rate(request.name, request.date, request.amount)

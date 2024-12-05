@@ -44,7 +44,7 @@ docker-compose up -d --build
             "rate": 0.012
         },
         {
-            "cargo_type": "Glass",
+            "cargo_type": "Box",
             "rate": 0.012
         }
     ],
@@ -54,7 +54,7 @@ docker-compose up -d --build
             "rate": 1.012
         },
         {
-            "cargo_type": "Glass",
+            "cargo_type": "Box",
             "rate": 1.012
         }
     ]
