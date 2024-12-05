@@ -16,7 +16,6 @@ async def insurance_costs(
     rate_service: RateService = Depends(get_rate_service)
 ) -> InsuranceCostsResponse:
     prise = await rate_service.get_rate(request.name, request.date, request.amount)
-    print(prise)
 
     return InsuranceCostsResponse(
         name=request.name,
